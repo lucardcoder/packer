@@ -13,9 +13,7 @@
         "instance_type": "t2.micro",
         "source_ami_filter": {
             "filters": {
-              "virtualization-type": "hvm",
               "name": "CentOS Linux 7 x86_64 HVM EBS *",
-              "root-device-type": "ebs",
               "product-code": "aw0evgkw8e5c1q413zgy5pjce"
             },
             "owners": [
