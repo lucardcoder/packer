@@ -10,26 +10,20 @@
         "secret_key": "{{user `aws_secret_key`}}",
         "region": "{{user `region`}}",
         "ami_name": "{{user `ami_name`}}",
-        "instance_type": "t2.micro",
+        "instance_type": "t2.micro",    
         "source_ami_filter": {
-            "filters": {
-              "virtualization-type": "hvm",
-              "name": "CentOS 7.8",
+            "filters" = {
+              "virtualization-type": "hvm"
+              "name": "amzn2-ami-kernel-5.10-hvm-2.0.*"
               "root-device-type": "ebs"
-            },
+            }
             "owners": [
-              "679593333241"
+              "137112412989"
             ],
             "most_recent": true
-          },
-        "ssh_username": "centos",
-        "type": "amazon-ebs",
-        "tags": {
-            "OS_Version": "CentOS",
-            "Release": "Latest",
-            "Base_AMI": "{{ .SourceAMI }}",
-            "Name": "{{user `ami_name`}}"
-          }
+          }        
+        "ssh_username": "ec2-user",
+        "type": "amazon-ebs"
         }
       ],
     "provisioners": [{
