@@ -13,9 +13,9 @@
         "instance_type": "t2.micro",
         "source_ami_filter": {
             "filters": {
-              "virtualization-type" = "hvm"
+              "virtualization-type": "hvm"
               "name": "CentOS 7.8"
-              "root-device-type" = "ebs"
+              "root-device-type": "ebs"
             },
             "owners": [
               "679593333241"
