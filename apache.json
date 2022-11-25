@@ -13,10 +13,10 @@
         "instance_type": "t2.micro",    
         "source_ami_filter": {
             "filters": {
-              "virtualization-type": "hvm"
-              "name": "amzn2-ami-kernel-5.10-hvm-2.0.*"
+              "virtualization-type": "hvm",
+              "name": "amzn2-ami-kernel-5.10-hvm-2.0.*",
               "root-device-type": "ebs"
-            }
+            },
             "owners": [
               "137112412989"
             ],
