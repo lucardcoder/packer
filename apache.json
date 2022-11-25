@@ -13,8 +13,7 @@
         "instance_type": "t2.micro",
         "source_ami_filter": {
             "filters": {
-              "name": "CentOS Linux 7 x86_64 HVM EBS *",
-              "product-code": "aw0evgkw8e5c1q413zgy5pjce"
+              "name": "CentOS Linux 7 x86_64 HVM EBS *"
             },
             "owners": [
               "679593333241"
