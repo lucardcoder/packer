@@ -1,14 +1,14 @@
 
 if(env.BRANCH_NAME == "dev"){
-    environment == "dev"
+    environment = "dev"
     region = "us-east-1"
 }
 else if(env.BRANCH_NAME == "qa"){
-    environment == "qa"
+    environment = "qa"
     region = "us-east-2"
 }
 else if(env.BRANCH_NAME == "master"){
-    environment == "prod"
+    environment = "prod"
     region = "us-west-2"
 }
 
