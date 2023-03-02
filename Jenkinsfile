@@ -1,4 +1,3 @@
-
 if(env.BRANCH_NAME == "dev"){
     environment = "dev"
     region = "us-east-1"
@@ -13,19 +12,17 @@ else if(env.BRANCH_NAME == "master"){
 }
 
 node{
-    stage("Pull packer repo"){
-        git 'https://github.com/lucardcoder/packer.git'
+    stage("Pull Packer Repo"){
+        git 'https://github.com/ikambarov/packer.git'
     }
 
     ami_name = "apache-${UUID.randomUUID().toString()}"
 
     withCredentials([usernamePassword(credentialsId: 'aws-creds', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
-        withEnv(["PACKER_AMI_NAME=${ami_name}", "AWS_DEFAULT_REGION=${region}"]) {
-            stage("packer validate"){
+        withEnv(["AWS_REGION=${region}", "PACKER_AMI_NAME=${ami_name}"]) {
+            stage("Validate"){
                 sh 'packer validate apache.json'
-            
-            }              
-    
+            }
 
             stage("Build"){
                 sh 'packer build apache.json'
@@ -33,5 +30,5 @@ node{
         }
     }
 
-    build job: 'terraform-ec2-ami-name', parameters: [string(name: 'action', value: 'apply'), string(name: 'environment', value: "${environment}"), string(name: 'ami_name', value: "${ami_name}")]
+    build job: 'terraform-ec2-by-ami-name', parameters: [string(name: 'action', value: 'apply'), string(name: 'environment', value: "${environment}"), string(name: 'ami_name', value: "${ami_name}")]
 }
