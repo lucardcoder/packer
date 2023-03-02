@@ -13,7 +13,7 @@ else if(env.BRANCH_NAME == "master"){
 
 node{
     stage("Pull Packer Repo"){
-        git 'https://github.com/ikambarov/packer.git'
+        git 'https://github.com/lucardcoder/packer.git'
     }
 
     ami_name = "apache-${UUID.randomUUID().toString()}"
