@@ -33,5 +33,5 @@ node{
         }
     }
 
-    build job: 'terraform-ec2-ami-name', parameters: [string(name: 'action', value: 'apply'), string(name: 'environment', value: "${params.environment}"), string(name: 'ami_name', value: "${ami_name}")]
+    build job: 'terraform-ec2-ami-name', parameters: [string(name: 'action', value: 'apply'), string(name: 'environment', value: "${environment}"), string(name: 'ami_name', value: "${ami_name}")]
 }
